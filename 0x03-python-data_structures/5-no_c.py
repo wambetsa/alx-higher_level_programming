@@ -2,7 +2,7 @@
 
 def no_c(my_string):
     n_string = ""
-    for i in my_string:
+    for c in my_string:
         if c not in 'cC':
             n_string += c
     return n_string
