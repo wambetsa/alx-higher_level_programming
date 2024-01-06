@@ -5,7 +5,7 @@
 
 class Rectangle:
     """A Rectangle class with attributes width and height, and
-    methods area, perimeter, print, and str.
+    methods area, perimeter, print, str, and repr.
     """
     def __init__(self, width=0, height=0):
         self.width = width
@@ -35,10 +35,11 @@ class Rectangle:
             raise ValueError("height must be >= 0")
         self.__height = value
 
+    def __repr__(self):
+        return "Rectangle({:d}, {:d})".format(self.__width, self.__height)
+
     def __str__(self):
         total = ""
-        if self.__height == 0 or self.width == 0:
-            return total
         for i in range(self.__height):
             total += ("#" * self.__width)
             if i is not self.__height - 1:
