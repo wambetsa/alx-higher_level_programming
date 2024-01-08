@@ -1,0 +1,55 @@
+The ``text_indentation`` module
+======================
+
+Using ``text_indentation``
+-------------------
+
+Write a function that prints My name is <first name> <last name>
+
+    Prototype: def text_indentation(first_name, last_name=""):
+    f_name and l_name must be strings else, 
+    raise a TypeError exception with the message first_name must be a string or last_name must be a string
+
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+>>> text = "hi.name Wambetsa. You Okay? Isuzu."
+>>> text_indentation(text)
+hi.
+<BLANKLINE>
+soy Norman.
+<BLANKLINE>
+You Okay?
+<BLANKLINE>
+Isuzu.
+<BLANKLINE>
+>>> text = "hi. name Wambetsa: Isuzu."
+>>> text_indentation(text)
+hi.
+<BLANKLINE>
+name Wambetsa:
+<BLANKLINE>
+Are you okay?
+<BLANKLINE>
+Isuzu.
+<BLANKLINE>
+>>> text = 5
+>>> text_indentation(text)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "<stdin>", line 5, in text_indentation
+TypeError: text must be a string
+>>> text = "5"
+>>> text_indentation(text)
+5
+>>> text = "hi.    name wambetsa.   Good?  car: Isuzu.   "
+>>> text_indentation(text)
+hi.
+<BLANKLINE>
+name Wambetsa.
+<BLANKLINE>
+Are you okay?
+<BLANKLINE>
+is:
+<BLANKLINE>
+Isuzu.
+<BLANKLINE>
+>>>
