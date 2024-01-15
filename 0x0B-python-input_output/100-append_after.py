@@ -1,18 +1,19 @@
-#!/usrbin/python3
-"""Defining append after"""
+#!/usr/bin/python3
+'''append_after'''
 
 
 def append_after(filename="", search_string="", new_string=""):
-    """Insert text after each line containing a given string in a file
-    Args: filename, search_string, new_string
-    """
-    text = ""
-    with open(filename, mode="r", encoding='utf-8') as fp:
-        lines = fp.readlines()
-    for line in lines:
-        if line.find(search_string) != -1:
-            text += line + new_string
-        else:
-            text += line
-    with open(filename, mode="w", encoding='utf-8') as fp:
-        fp.write(text)
+	'''search and update'''
+	read = []
+	with open(filename, "r", encoding="utf-8") as f:
+		read = f.readlines()
+		index = 0
+
+		while index < len(read):
+			if search_string in read[index]:
+				read[index:index + 1] = [read[index], new_string]
+				index += 1
+			index += 1
+
+	with open(filename, "w", encoding="utf-8") as file:
+		file.writelines(read)
