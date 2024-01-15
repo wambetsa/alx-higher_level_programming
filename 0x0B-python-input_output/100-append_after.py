@@ -7,10 +7,12 @@ def append_after(filename="", search_string="", new_string=""):
     Args: filename, search_string, new_string
     """
     text = ""
-    with open(filename) as fp:
-        for line in fp:
+    with open(filename, mode="r", encoding='utf-8') as fp:
+        lines = fp.readlines()
+    for line in lines:
+        if line.find(search_string) != -1:
+            text += line + new_string
+        else:
             text += line
-            if search_string in line:
-                text += new_string
-    with open(filename, "w") as w:
-        w.write(text)
+    with open(filename, mode="w", encoding='utf-8') as fp:
+        fp.write(text)
