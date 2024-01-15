@@ -8,6 +8,6 @@ class Student:
         self.first_name = first_name
         self.last_name = last_name
         self.age = age
-    def to_json(self, first_name, last_name, age):
+    def to_json(self):
         """dict representation of student"""
-        return self.__dict__(first_name, last_name, age)
+        return self.__dict__(self)
