@@ -12,11 +12,11 @@ class Rectangle(Base):
         Raises: TypeError, ValueError
         """
         """inherit id from base class"""
-        self.__width = width
-        self.__height = height
-        self.__x = x
-        self.__y = y
         super().__init__(id)
+        self.width = width
+        self.height = height
+        self.x = x
+        self.y = y
     
     """height getter"""
     @property
@@ -72,3 +72,20 @@ class Rectangle(Base):
         if value < 0:
             raise ValueError("y must be >= 0")
         self.__y = value
+
+if __name__ == "__main__":
+
+    b1 = Base()
+    print(b1.id)
+
+    b2 = Base()
+    print(b2.id)
+
+    b3 = Base()
+    print(b3.id)
+
+    b4 = Base(12)
+    print(b4.id)
+
+    b5 = Base()
+    print(b5.id)
