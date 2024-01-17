@@ -2,7 +2,7 @@
 """rectangle module containing Rectangle class"""
 
 
-from base import Base
+from models.base import Base
 
 
 class Rectangle(Base):
@@ -79,10 +79,10 @@ class Rectangle(Base):
         return self.__height * self.__width
     
     def display(self):
+        """prints rectange using # char"""
         res = "#"
         for i in range(self.__height):
             for j in range(self.__width):
-                #print("#", end='')
                 print("{}".format(res), end='')
             print(end='\n')
 
