@@ -80,19 +80,12 @@ class Rectangle(Base):
     
     def display(self):
         """prints rectange using # char"""
-        res = "#"
-        for i in range(self.__height):
-            for j in range(self.__width):
-                print("{}".format(res), end='')
+        [print("") for y in range(self.__y)]
+
+        #res = "#"
+        for h in range(self.__height):
+            [print(" ", end="") for x in range(self.x)]
+            [print("#", end="") for w in range(self.width)]
+            # for j in range(self.__width):
+            #     print("{}".format(res), end='')
             print(end='\n')
-
-    def __str__(self):
-        return f"[Rectangle] ({self.id}) {self.__x}/{self.__y} - {self.width}/{self.__height}"
-    
-if __name__ == "__main__":
-
-    r1 = Rectangle(4, 6, 2, 1, 12)
-    print(r1)
-
-    r2 = Rectangle(5, 5, 1)
-    print(r2)
