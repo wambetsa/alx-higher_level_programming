@@ -1,2 +1,2 @@
 #!/usr/bin/python3
-"""empt models/__init__.py file"""
+"""empty models/__init__.py file"""
