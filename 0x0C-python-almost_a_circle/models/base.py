@@ -2,11 +2,11 @@
 """Base class"""
 
 
-class Base:
+class Base():
     """private class attribute"""
     __nb_objects = 0
 
-    """constructor/instantiating object"""
+    """constructor/initializing object"""
     def __init__(self, id=None):
         if id is not None:
             self.id = id
