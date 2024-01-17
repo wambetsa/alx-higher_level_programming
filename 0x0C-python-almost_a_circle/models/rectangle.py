@@ -89,3 +89,21 @@ class Rectangle(Base):
             # for j in range(self.__width):
             #     print("{}".format(res), end='')
             print(end='\n')
+    def update(self, *args):
+        if args and len(args) != 0:
+            a = 0
+            for i in args:
+                if a == 0:
+                    if i is None:
+                        self.__init__(self.width, self.height, self.x, self.y)
+                    else:
+                        self.id = i
+                elif a == 1:
+                    self.width = i
+                elif a == 2:
+                    self.height = i
+                elif a == 3:
+                    self.x = i
+                elif a == 4:
+                    self.y = i
+                a += 1
