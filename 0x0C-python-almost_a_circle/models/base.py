@@ -16,15 +16,18 @@ class Base():
 
 #usage of above class
 if __name__ == "__main__":
-    #print output
+
     b1 = Base()
-    b2 = Base()
-    b3 = Base(20)
-    b4 = Base()
-    b5 = Base()
-    
     print(b1.id)
+
+    b2 = Base()
     print(b2.id)
+
+    b3 = Base()
     print(b3.id)
+
+    b4 = Base(12)
     print(b4.id)
+
+    b5 = Base()
     print(b5.id)
