@@ -107,3 +107,4 @@ class Rectangle(Base):
                 elif a == 4:
                     self.y = i
                 a += 1
+
