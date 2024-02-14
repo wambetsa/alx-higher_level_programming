@@ -1,7 +1,8 @@
---a script that uses the hbtn_0d_tvshows database to list all genres not linked to the show Dexter
+-- lists all genres not linked to show Dexter
+   -- Each record must display:
       -- tv_genres.name
-   -- Results must be sorted in ascending order by the genre name
-   -- The database name will be passed as an argument of the mysql command
+   -- Results should be sorted in ascending order by the genre name
+   -- The database name will be passed as argument of the mysql command
 
 SELECT name FROM tv_genres
 WHERE tv_genres.id NOT IN (
