@@ -13,5 +13,5 @@ if (!isNaN(num)) {
   console.log(`My number: ${num}`);
 } else {
   // If it can't be converted, print "Not a number"
-  console.log("Not a number");
+  console.log('Not a number');
 }
