@@ -1,12 +1,11 @@
 #!/usr/bin/node
 // a script that prints 3 lines: (like 1-multi_languages.js) but by using an array of string and a loop
 
-const lang = 'C is fun';
-
-if (isNaN(process.argv[2])) {
+if (process.argv[2] === undefined || isNaN(process.argv[2])) {
   console.log('Missing number of occurrences');
 } else {
-  for (let i = 0; i < parseInt(process.argv[2]); i++) {
-    console.log(lang);
+  const num = Number(process.argv[2]);
+  for (let i = 0; i < num; i++) {
+    console.log('C is fun');
   }
 }
