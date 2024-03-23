@@ -58,5 +58,7 @@ If pyscript expect params such as username,  password, database name, run as fol
 If pyscript doesn't expect any params, run py script as follows:
 - $\textcolor{yellowgreen}{./mypythonscript.py}$
 
+##### NB: It's important to note that constructing SQL queries by concatenating strings with user-provided input leaves your application vulnerable to SQL injection attacks. It's highly discouraged to construct queries this way. Instead, you should use parameterized queries or ORM libraries like SQLAlchemy to safely execute SQL queries with user input.
+
 ### Author: Emmanuel Wambetsa Shitseswa
 - dev wambetsa
