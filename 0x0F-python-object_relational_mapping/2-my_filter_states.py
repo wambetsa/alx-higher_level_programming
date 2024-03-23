@@ -2,7 +2,8 @@
 
 """
     A script that lists all states from the database hbtn_0e_0_usa
-    starting with capital N Username, password and database names are given as user args
+    starting with capital N Username, password
+    and database names are given as user args
 """
 
 
