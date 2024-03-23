@@ -1,7 +1,8 @@
 #!/usr/bin/python3
 """
-    A script that deletes all State objects from hbtn_0e_6_usa that has the letter a
-    Username, password and dbname wil be passed as arguments to the script.
+    A script that deletes all State objects from hbtn_0e_6_usa
+    that has the letter a Username, password and
+    db name wil be passed as arguments to the script.
 """
 
 
