@@ -38,6 +38,7 @@ For installing MySQLdb, we need to have MySQL installed: Where? On Linux or WSL.
 - (2, 0, 3, 'final', 0)
 
 ## Install SQLAlchemy module version 1.4.x
+How? :
 - sudo pip3 install SQLAlchemy
 - ...
 - python3
@@ -48,7 +49,9 @@ For installing MySQLdb, we need to have MySQL installed: Where? On Linux or WSL.
 ## Run SQL and Python Files
 How do I run my MySQL scripts to create my database, create table, and insert data? :
 - cat my_sql_filename.sql | mysql -uroot -p
+
 How do I run my python scripts to interact with database datasets?
+
 If pyscript expect params such as username,  password, database name, run as follows:
 - ./my_python_script.py root root database_name
 
