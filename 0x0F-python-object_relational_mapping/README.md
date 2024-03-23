@@ -27,8 +27,8 @@ Why Python virtual environment/venv? Venv allows installation of specific depend
 
 ## Install MySQLdb module version 2.0.x
 For installing MySQLdb, we need to have MySQL installed: Where? On Linux or WSL. How? :
-- """sudo apt-get install python3-dev"""
-- """sudo apt-get install libmysqlclient-dev"""
+- sudo apt-get install python3-dev
+- sudo apt-get install libmysqlclient-dev
 - sudo apt-get install zlib1g-dev
 - sudo pip3 install mysqlclient
 - ...
