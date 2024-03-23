@@ -62,6 +62,9 @@ If pyscript doesn't expect any params, run py script as follows:
 
 ##### Once again, write a script that takes in arguments and displays all values in the states table of hbtn_0e_0_usa where name matches the argument. But this time, write one that is safe from MySQL injections!
 
-#### FOR MORE INFO REFERENCE: 3-my_safe_filter_states.py vs 2-my_filter_states.py
+## DIRECT SQL INJECTION IS DANGERIOUS USE PARAMETER PLACEHOLDERS AS THEY ARE ESCAPED BY DATABASE DRIVERS
+
+## FOR MORE INFO REFERENCE: 3-my_safe_filter_states.py vs 2-my_filter_states.py
+
 ### Author: Emmanuel Wambetsa Shitseswa
 - dev wambetsa
