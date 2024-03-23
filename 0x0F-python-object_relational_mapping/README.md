@@ -48,15 +48,15 @@ How? :
 
 ## Run SQL and Python Files
 How do I run my MySQL scripts to create my database, create table, and insert data? :
-- $\textcolor{yellowgreen}{cat\ my-sql-filename.sql\ |\ mysql\ -uroot\ -p}$
+- $\textcolor{yellowgreen}{cat\ mysqlfilename.sql\ |\ mysql\ -uroot\ -p}$
 
 How do I run my python scripts to interact with database datasets?
 
 If pyscript expect params such as username,  password, database name, run as follows:
-- $\textcolor{yellowgreen}{./my-python-script.py\ root\ root\ database-name}$
+- $\textcolor{yellowgreen}{./mypythonscript.py\ root\ root\ dbname}$
 
 If pyscript doesn't expect any params, run py script as follows:
-- $\textcolor{yellowgreen}{./my-python-script.py}$
+- $\textcolor{yellowgreen}{./mypythonscript.py}$
 
 ### Author: Emmanuel Wambetsa Shitseswa
 - dev wambetsa
