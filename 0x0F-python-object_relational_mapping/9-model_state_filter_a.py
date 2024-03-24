@@ -1,7 +1,8 @@
 #!/usr/bin/python3
 """
-    A script that lists all State objects from hbtn_0e_6_usa that conatin
-    the letter a from teh db. Username, password and dbname wil be passed as arguments to the script.
+    A script that lists all State objects from hbtn_0e_6_usa that contains
+    letter a from db. Username, password and dbname
+    wil be passed as arguments to the script.
 """
 
 
