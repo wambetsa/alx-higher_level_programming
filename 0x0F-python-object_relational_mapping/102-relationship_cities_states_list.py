@@ -1,15 +1,13 @@
 #!/usr/bin/python3
 """
-    a script that prints all City objects from the db hbtn_0e_14_usa
-    arguments: mysql username, password, db_name
-    import State and Base from model_state
+Script that lists all City objects from the database hbtn_0e_101_usa
 """
+
 from sys import argv
-from model_state import Base, State
-from model_city import City
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
-
+from relationship_state import State
+from relationship_city import Base, City
 
 if __name__ == "__main__":
     """
@@ -25,9 +23,10 @@ if __name__ == "__main__":
     engine = create_engine(db_connection)
     Session = sessionmaker(bind=engine)
     session = Session()
+    cities = session.query(City).order_by(City.id).all()
 
-    results = session.query(City, State).join(State)
+    for city in cities:
+        state_name = city.state.name
+        print("{}: {} -> {}".format(city.id, city.name, state_name))
 
-    for city, state in results.all():
-        print(f"{state.name}: ({city.id}) {city.name}")
-
+    session.close()
