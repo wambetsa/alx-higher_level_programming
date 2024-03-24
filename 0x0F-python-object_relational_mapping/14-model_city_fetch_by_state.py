@@ -1,33 +1,26 @@
 #!/usr/bin/python3
 """
-    a script that prints all City objects from the db hbtn_0e_14_usa
-    arguments: mysql username, password, db_name
-    import State and Base from model_state
+Script that prints all City objects from the database
 """
-from sys import argv
-from model_state import Base, State
 from model_city import City
+from model_state import Base, State
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
-
+from sys import argv
 
 if __name__ == "__main__":
-    """
-        args:
-            mysql username -argv[1]
-            mysql password -argv[2]
-            database name -argv[3]
-    """
-
-    db_connection = "mysql+mysqldb://{}:{}@localhost:3306/{}".format(
-            argv[1], argv[2], argv[3])
-
-    engine = create_engine(db_connection)
+    # create engine
+    engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'.format(
+        argv[1], argv[2], argv[3]), pool_pre_ping=True)
+    # create configured "Session" class
     Session = sessionmaker(bind=engine)
+    # create session
     session = Session()
+    Base.metadata.create_all(engine)
 
-    results = session.query(City, State).join(State)
-
-    for city, state in results.all():
-        print(f"{state.name}: ({city.id}) {city.name}")
+    city = session.query(State, City).join(City).order_by(City.id)
+    for state, city in city:
+        print("{}: ({}) {}".format(state.name, city.id, city.name))
+    # close session
+    session.close()
 
