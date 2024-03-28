@@ -9,14 +9,14 @@
 if __name__ == '__main__':
     import sys
     import urllib.request
-    import urllib.error
+    from urllib.error import HTTPError
 
     try:
         url = sys.argv[1]
         req = urllib.request.Request(url)
         with urllib.request.urlopen(req) as res:
             result = res.read()
-            print("{}".format(result.decode('utf-8'))
-    except urllib.error.HTTPError as e:
+            print("{}".format(result.decode('utf-8')))
+    except HTTPError as e:
         if hasattr(e, "code"):
-            print("Error code:".format(e.code)))
+            print("Error code:".format(e.code))
