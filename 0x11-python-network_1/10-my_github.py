@@ -5,11 +5,10 @@
 """
 
 
-if __name__== '__main__':
+if __name__ == '__main__':
     import sys
     import requests
     from requests.auth import HTTPBasicAuth
-
     auth = HTTPBasicAuth(sys.argv[1], sys.argv[2])
     url = "https://api.github.com/user"
     res = requests.get(url, auth=auth)
