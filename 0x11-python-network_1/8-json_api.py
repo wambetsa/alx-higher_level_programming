@@ -10,15 +10,19 @@ if __name__ == '__main__':
     import requests
 
     if len(sys.argv) == 1:
-        search_key = ''
+        q = ''
     else:
-        search_key = sys.argv[1]
+        q = sys.argv[1]
 
-    payload = {'q': search_key}
+    payload = {'q': q}
     url = 'http://0.0.0.0:5000/search_user'
     res = requests.post(url, data=payload)
 
-    if isinstance(res.json(), dict):
-        print("[{}] {}".format(res.get('id'), res.get('name'))
-    else:
-        print('No result')
+    try:
+        json_result = res.json()
+        if json_result:
+            print("[{}] {}".format(json_result['id'], json_result['name']))
+        else:
+            print('No result')
+    except:
+        print('Not a valid JSON')
