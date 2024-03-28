@@ -2,20 +2,18 @@
 """
     a Python script that takes 2 arguments in order to solve this challenge
 """
-import sys
-import requests
 
 
 if __name__ == '__main__':
-    url = "https://api.github.com/repos/{}/{}/commits".format(
-        sys.argv[2], sys.argv[1])
+    import requests
+    from sys import argv
 
-    r = requests.get(url)
-    commits = r.json()
-    try:
-        for i in range(10):
-            print("{}: {}".format(
-                commits[i].get("sha"),
-                commits[i].get("commit").get("author").get("name")))
-    except IndexError:
-        pass
+    name = argv[2]
+    repo = argv[1]
+    params = {'per_page': 10}
+    r = requests.get('https://api.github.com/repos/{}/{}/commits'
+                     .format(name, repo), params=params)
+    r = r.json()
+    for arg in r:
+        print("{}: {}".format(arg.get('sha'),
+                              arg.get('commit').get('author').get('name')))
